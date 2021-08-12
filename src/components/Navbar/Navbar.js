@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import {
   AppBar,
   Avatar,
@@ -16,7 +17,7 @@ import {
 const NavBar = () => {
   return (
     <div>
-      <AppBar position="static">
+      <AppBar position="static" variant="outlined">
         <Toolbar>
           <Box mr={2}>
             <IconButton edge="start" color="inherit">
@@ -29,13 +30,13 @@ const NavBar = () => {
             </Typography>
           </Hidden>
 
-          <Box
-            fontSize="h6.fontSize"
-            fontWeight="bold"
-            textAlign="center"
-            flexGrow={1}
-          >
-            Jwava
+          <Box textAlign="center" flexGrow={1}>
+            <Image
+              src="/images/logo@2x.png"
+              alt="Logo"
+              width={126}
+              height={30}
+            />
           </Box>
 
           <Box display="flex" alignItems="center">
@@ -45,13 +46,24 @@ const NavBar = () => {
                 color="inherit"
                 edge="start"
               >
-                <Badge color="secondary" badgeContent={8}>
+                <Badge
+                  color="primary"
+                  badgeContent={
+                    <Box
+                      fontSize="body2.fontSize"
+                      fontWeight="body2.fontWeight"
+                      color="error.main"
+                    >
+                      8
+                    </Box>
+                  }
+                >
                   <NotificationsIcon fontSize="large" />
                 </Badge>
               </IconButton>
             </Box>
             <Hidden xsDown>
-              <Box mr={2} fontWeight={500} fontSize="p.fontSize">
+              <Box mr={2} fontWeight={500} fontSize="body1.fontSize">
                 Atheek
               </Box>
               <Avatar alt="Profile Picture" src="/images/profile.jpeg" />
