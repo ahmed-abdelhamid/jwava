@@ -7,9 +7,26 @@ const theme = createTheme({
     },
     secondary: {
       main: '#2CC56E',
+      contrastText: '#fff',
     },
     background: {
       default: '#fff',
+    },
+  },
+  overrides: {
+    MuiButton: {
+      root: {
+        textTransform: 'capitalize',
+        borderRadius: 10,
+      },
+      containedSizeLarge: {
+        fontSize: '1.1rem',
+      },
+      iconSizeLarge: {
+        '& > *:first-child': {
+          fontSize: '2rem',
+        },
+      },
     },
   },
 });
