@@ -3,6 +3,7 @@ import Head from 'next/head';
 import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import theme from '../utils/theme';
+import Navbar from '../components/Navbar/Navbar'
 
 export default function MyApp(props) {
   const { Component, pageProps } = props;
@@ -22,6 +23,7 @@ export default function MyApp(props) {
       </Head>
       <ThemeProvider theme={theme}>
         <CssBaseline />
+        <Navbar />
         <Component {...pageProps} />
       </ThemeProvider>
     </React.Fragment>
