@@ -1,15 +1,20 @@
 import { Grid, Box, Button } from '@material-ui/core';
-import { AddRounded as AddIcon } from '@material-ui/icons';
+import {
+  AddRounded as AddIcon,
+  People as PeopleIcon,
+} from '@material-ui/icons';
 import Navbar from '../components/Navbar/Navbar';
 import Heading from '../components/Heading/Heading';
 import ResponsiveDrawer from '../components/ResponsiveDrawer/ResponsiveDrawer';
+
+const drawerNames = [{ name: 'Clients', Icon: PeopleIcon }];
 
 export default function Clients() {
   return (
     <>
       <Navbar pageName="Clients" />
-      {/* <ResponsiveDrawer /> */}
-      <Box px={2} py={4}>
+      <ResponsiveDrawer drawerNames={drawerNames}>
+        {/* Page Content */}
         <Grid container direction="column" spacing={2}>
           {/* Heading Content */}
           <Grid item>
@@ -29,7 +34,7 @@ export default function Clients() {
           {/* Table Content */}
           <Grid item>Table</Grid>
         </Grid>
-      </Box>
+      </ResponsiveDrawer>
     </>
   );
 }

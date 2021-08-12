@@ -28,6 +28,11 @@ const theme = createTheme({
         },
       },
     },
+    MuiListItemIcon: {
+      root: {
+        color: 'inherit',
+      },
+    },
   },
 });
 

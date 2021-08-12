@@ -2,6 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import Box from '@material-ui/core/Box';
 import theme from '../utils/theme';
 
 export default function MyApp(props) {
@@ -24,8 +25,10 @@ export default function MyApp(props) {
         />
       </Head>
       <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <Component {...pageProps} />
+        <Box display="flex">
+          <CssBaseline />
+          <Component {...pageProps} />
+        </Box>
       </ThemeProvider>
     </React.Fragment>
   );
