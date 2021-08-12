@@ -14,7 +14,7 @@ import {
   NotificationsOutlined as NotificationsIcon,
 } from '@material-ui/icons';
 
-const NavBar = () => {
+const NavBar = ({ pageName }) => {
   return (
     <div>
       <AppBar position="static" variant="outlined">
@@ -26,7 +26,7 @@ const NavBar = () => {
           </Box>
           <Hidden xsDown>
             <Typography variant="h6" noWrap>
-              Clients
+              {pageName}
             </Typography>
           </Hidden>
 
