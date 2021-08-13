@@ -8,6 +8,7 @@ import Navbar from '../components/Navbar/Navbar';
 import Heading from '../components/Heading/Heading';
 import ResponsiveDrawer from '../components/ResponsiveDrawer/ResponsiveDrawer';
 import ClientsTable from '../components/ClientsTable/ClientsTable';
+import AddNewClient from '../components/AddNewClient/AddNewClient';
 import { clients } from '../utils/date/clients';
 
 const drawerNames = [{ name: 'Clients', Icon: PeopleIcon }];
@@ -16,6 +17,11 @@ export default function Clients() {
   const [filteredClients, setFilteredClients] = useState(clients);
   const [searchValue, setSearchValue] = useState('');
   const [clientID, setClientID] = useState();
+  const [openDialog, setOpenDialog] = useState(false);
+
+  const toggleDialog = () => {
+    setOpenDialog(!openDialog);
+  };
 
   const deleteClient = () => {
     const clients = filteredClients.filter(({ id }) => id !== clientID);
@@ -40,6 +46,7 @@ export default function Clients() {
           <Grid item>
             <Heading searchValue={searchValue} handleSearch={handleSearch}>
               <Button
+                onClick={toggleDialog}
                 disableElevation
                 color="secondary"
                 variant="contained"
@@ -61,6 +68,7 @@ export default function Clients() {
           </Grid>
         </Grid>
       </ResponsiveDrawer>
+      <AddNewClient open={openDialog} close={toggleDialog} />
     </>
   );
 }

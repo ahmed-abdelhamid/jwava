@@ -18,10 +18,10 @@ const theme = createTheme({
     MuiButton: {
       root: {
         textTransform: 'capitalize',
-        borderRadius: 10,
       },
       containedSizeLarge: {
         fontSize: '1.1rem',
+        borderRadius: 10,
       },
       iconSizeLarge: {
         '& > *:first-child': {
