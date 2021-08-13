@@ -14,6 +14,7 @@ import { clients } from '../utils/date/clients';
 const drawerNames = [{ name: 'Clients', Icon: PeopleIcon }];
 
 export default function Clients() {
+  const [allClients, setAllClients] = useState(clients);
   const [filteredClients, setFilteredClients] = useState(clients);
   const [searchValue, setSearchValue] = useState('');
   const [clientID, setClientID] = useState();
@@ -28,10 +29,27 @@ export default function Clients() {
     setFilteredClients(clients);
   };
 
+  const addNewClient = (clientData) => {
+    const client = {
+      id: Math.floor(Math.random() * 10000) + 1,
+      noOfBranches: 1,
+      startDate: new Date(),
+      subscriptionStatus: true,
+      ...clientData,
+    };
+    const clients = [client, ...allClients];
+    setAllClients(clients);
+    const filteredClients = clients.filter(({ storeName }) =>
+      storeName.toLowerCase().includes(searchValue.toLowerCase())
+    );
+    setFilteredClients(filteredClients);
+    toggleDialog();
+  };
+
   const handleSearch = (e) => {
     const { value } = e.target;
     setSearchValue(value);
-    const filteredClients = clients.filter(({ storeName }) =>
+    const filteredClients = allClients.filter(({ storeName }) =>
       storeName.toLowerCase().includes(value.toLowerCase())
     );
     setFilteredClients(filteredClients);
@@ -68,7 +86,11 @@ export default function Clients() {
           </Grid>
         </Grid>
       </ResponsiveDrawer>
-      <AddNewClient open={openDialog} close={toggleDialog} />
+      <AddNewClient
+        open={openDialog}
+        close={toggleDialog}
+        addClient={addNewClient}
+      />
     </>
   );
 }

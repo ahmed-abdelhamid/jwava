@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import {
   Dialog,
   DialogActions,
@@ -15,11 +16,17 @@ import {
 } from '@material-ui/icons';
 import useStyles from './styles';
 
-const AddNewClient = ({ open, close }) => {
+const AddNewClient = ({ open, close, addClient }) => {
   const classes = useStyles();
+  const storeNameInput = useRef();
+  const businessTypeInput = useRef();
 
   const addNewClient = () => {
-    close();
+    const clientData = {
+      storeName: storeNameInput.current.value,
+      businessType: businessTypeInput.current.value,
+    };
+    addClient(clientData);
   };
 
   return (
@@ -156,9 +163,10 @@ const AddNewClient = ({ open, close }) => {
               >
                 <select
                   className={`${classes.input} ${classes.select}`}
-                  placeholder="Select Business Type"
+                  defaultValue=""
+                  ref={businessTypeInput}
                 >
-                  <option value="" disabled selected hidden>
+                  <option value="" disabled hidden>
                     Select Business Type
                   </option>
                   <option value="Online Store">Online Store</option>
@@ -305,6 +313,7 @@ const AddNewClient = ({ open, close }) => {
                 xs={7}
               >
                 <input
+                  ref={storeNameInput}
                   className={classes.input}
                   placeholder="Enter Store Name"
                 />
