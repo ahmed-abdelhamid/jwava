@@ -9,6 +9,7 @@ import Heading from '../components/Heading/Heading';
 import ResponsiveDrawer from '../components/ResponsiveDrawer/ResponsiveDrawer';
 import ClientsTable from '../components/ClientsTable/ClientsTable';
 import AddNewClient from '../components/AddNewClient/AddNewClient';
+import SwipeableDrawer from '../components/SwipeableDrawer/SwipeableDrawer';
 import { clients } from '../utils/date/clients';
 
 const drawerNames = [{ name: 'Clients', Icon: PeopleIcon }];
@@ -18,7 +19,12 @@ export default function Clients() {
   const [filteredClients, setFilteredClients] = useState(clients);
   const [searchValue, setSearchValue] = useState('');
   const [clientID, setClientID] = useState();
+  const [openDrawer, setOpenDrawer] = useState(false);
   const [openDialog, setOpenDialog] = useState(false);
+
+  const toggleDrawer = () => {
+    setOpenDrawer(!openDrawer);
+  };
 
   const toggleDialog = () => {
     setOpenDialog(!openDialog);
@@ -56,7 +62,7 @@ export default function Clients() {
   };
   return (
     <>
-      <Navbar pageName="Clients" />
+      <Navbar pageName="Clients" toggleDrawer={toggleDrawer} />
       <ResponsiveDrawer drawerNames={drawerNames}>
         {/* Page Content */}
         <Grid container direction="column" spacing={2}>
@@ -86,6 +92,7 @@ export default function Clients() {
           </Grid>
         </Grid>
       </ResponsiveDrawer>
+      <SwipeableDrawer open={openDrawer} toggleDrawer={toggleDrawer} />
       <AddNewClient
         open={openDialog}
         close={toggleDialog}

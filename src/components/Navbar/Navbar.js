@@ -15,13 +15,13 @@ import {
 } from '@material-ui/icons';
 import useStyles from './styles';
 
-const NavBar = ({ pageName }) => {
+const NavBar = ({ pageName, toggleDrawer }) => {
   const classes = useStyles();
   return (
     <AppBar variant="outlined" className={classes.appBar}>
       <Toolbar>
         <Box mr={2}>
-          <IconButton edge="start" color="inherit">
+          <IconButton edge="start" color="inherit" onClick={toggleDrawer}>
             <MenuIcon fontSize="large" />
           </IconButton>
         </Box>
