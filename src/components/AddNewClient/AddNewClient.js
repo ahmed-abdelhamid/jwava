@@ -61,7 +61,8 @@ const AddNewClient = ({ open, close, addClient }) => {
                 py={1}
                 bgcolor="grey.100"
                 item
-                xs={5}
+                sm={5}
+                xs={12}
               >
                 Owner Full Name
               </Grid>
@@ -72,7 +73,8 @@ const AddNewClient = ({ open, close, addClient }) => {
                 px={2}
                 py={1}
                 item
-                xs={7}
+                sm={7}
+                xs={12}
               >
                 <input
                   className={classes.input}
@@ -87,7 +89,8 @@ const AddNewClient = ({ open, close, addClient }) => {
                 py={1}
                 bgcolor="grey.100"
                 item
-                xs={5}
+                sm={5}
+                xs={12}
               >
                 Owner Email
               </Grid>
@@ -98,7 +101,8 @@ const AddNewClient = ({ open, close, addClient }) => {
                 px={2}
                 py={1}
                 item
-                xs={7}
+                sm={7}
+                xs={12}
               >
                 <input
                   className={classes.input}
@@ -113,7 +117,8 @@ const AddNewClient = ({ open, close, addClient }) => {
                 py={1}
                 bgcolor="grey.100"
                 item
-                xs={5}
+                sm={5}
+                xs={12}
               >
                 Owner Phone Number
               </Grid>
@@ -124,7 +129,8 @@ const AddNewClient = ({ open, close, addClient }) => {
                 px={2}
                 py={1}
                 item
-                xs={7}
+                sm={7}
+                xs={12}
               >
                 <input
                   className={classes.input}
@@ -148,7 +154,8 @@ const AddNewClient = ({ open, close, addClient }) => {
                 py={1}
                 bgcolor="grey.100"
                 item
-                xs={5}
+                sm={5}
+                xs={12}
               >
                 Business Type
               </Grid>
@@ -159,7 +166,8 @@ const AddNewClient = ({ open, close, addClient }) => {
                 px={2}
                 py={1}
                 item
-                xs={7}
+                sm={7}
+                xs={12}
               >
                 <select
                   className={`${classes.input} ${classes.select}`}
@@ -183,7 +191,8 @@ const AddNewClient = ({ open, close, addClient }) => {
                 py={1}
                 bgcolor="grey.100"
                 item
-                xs={5}
+                sm={5}
+                xs={12}
               >
                 Store Legal Name
               </Grid>
@@ -194,7 +203,8 @@ const AddNewClient = ({ open, close, addClient }) => {
                 px={2}
                 py={1}
                 item
-                xs={7}
+                sm={7}
+                xs={12}
               >
                 <input
                   className={classes.input}
@@ -209,7 +219,8 @@ const AddNewClient = ({ open, close, addClient }) => {
                 py={1}
                 bgcolor="grey.100"
                 item
-                xs={5}
+                sm={5}
+                xs={12}
               >
                 Business License Number
               </Grid>
@@ -220,7 +231,8 @@ const AddNewClient = ({ open, close, addClient }) => {
                 px={2}
                 py={1}
                 item
-                xs={7}
+                sm={7}
+                xs={12}
               >
                 <input
                   className={classes.input}
@@ -235,7 +247,8 @@ const AddNewClient = ({ open, close, addClient }) => {
                 py={1}
                 bgcolor="grey.100"
                 item
-                xs={5}
+                sm={5}
+                xs={12}
               >
                 Business Tax Number
               </Grid>
@@ -246,7 +259,8 @@ const AddNewClient = ({ open, close, addClient }) => {
                 px={2}
                 py={1}
                 item
-                xs={7}
+                sm={7}
+                xs={12}
               >
                 <input
                   className={classes.input}
@@ -261,7 +275,8 @@ const AddNewClient = ({ open, close, addClient }) => {
                 py={1}
                 bgcolor="grey.100"
                 item
-                xs={5}
+                sm={5}
+                xs={12}
               >
                 Business License Doc
               </Grid>
@@ -272,7 +287,8 @@ const AddNewClient = ({ open, close, addClient }) => {
                 px={2}
                 py={1}
                 item
-                xs={7}
+                xs={12}
+                sm={7}
               >
                 <Button
                   variant="outlined"
@@ -299,7 +315,8 @@ const AddNewClient = ({ open, close, addClient }) => {
                 py={1}
                 bgcolor="grey.100"
                 item
-                xs={5}
+                sm={5}
+                xs={12}
               >
                 Store Name
               </Grid>
@@ -310,7 +327,8 @@ const AddNewClient = ({ open, close, addClient }) => {
                 px={2}
                 py={1}
                 item
-                xs={7}
+                sm={7}
+                xs={12}
               >
                 <input
                   ref={storeNameInput}
@@ -326,7 +344,8 @@ const AddNewClient = ({ open, close, addClient }) => {
                 py={1}
                 bgcolor="grey.100"
                 item
-                xs={5}
+                sm={5}
+                xs={12}
               >
                 Address
               </Grid>
@@ -337,7 +356,8 @@ const AddNewClient = ({ open, close, addClient }) => {
                 px={2}
                 py={1}
                 item
-                xs={7}
+                sm={7}
+                xs={12}
               >
                 <input className={classes.input} placeholder="Enter Address" />
               </Grid>
@@ -349,7 +369,8 @@ const AddNewClient = ({ open, close, addClient }) => {
                 py={1}
                 bgcolor="grey.100"
                 item
-                xs={5}
+                sm={5}
+                xs={12}
               >
                 Email
               </Grid>
@@ -360,7 +381,8 @@ const AddNewClient = ({ open, close, addClient }) => {
                 px={2}
                 py={1}
                 item
-                xs={7}
+                sm={7}
+                xs={12}
               >
                 <input className={classes.input} placeholder="Owner Email" />
               </Grid>
@@ -372,7 +394,8 @@ const AddNewClient = ({ open, close, addClient }) => {
                 py={1}
                 bgcolor="grey.100"
                 item
-                xs={5}
+                sm={5}
+                xs={12}
               >
                 Phone Number
               </Grid>
@@ -383,7 +406,8 @@ const AddNewClient = ({ open, close, addClient }) => {
                 px={2}
                 py={1}
                 item
-                xs={7}
+                sm={7}
+                xs={12}
               >
                 <input
                   className={classes.input}
