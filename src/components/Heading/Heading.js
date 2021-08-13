@@ -8,8 +8,9 @@ import {
 } from '@material-ui/core';
 import { Search as SearchIcon } from '@material-ui/icons';
 
-const Heading = ({ children }) => {
+const Heading = ({ children, searchValue, handleSearch }) => {
   const mobile = useMediaQuery(({ breakpoints }) => breakpoints.down('xs'));
+
   return (
     <Grid
       container
@@ -20,6 +21,8 @@ const Heading = ({ children }) => {
       <Grid component={Box} order={mobile ? 1 : 0} item xs={12} sm={8}>
         <FormControl variant="outlined" fullWidth color="secondary">
           <OutlinedInput
+            value={searchValue}
+            onChange={handleSearch}
             placeholder="Search"
             id="search"
             startAdornment={

@@ -1,4 +1,5 @@
-import { Grid, Box, Button } from '@material-ui/core';
+import { useState } from 'react';
+import { Grid, Button } from '@material-ui/core';
 import {
   AddRounded as AddIcon,
   People as PeopleIcon,
@@ -6,10 +7,29 @@ import {
 import Navbar from '../components/Navbar/Navbar';
 import Heading from '../components/Heading/Heading';
 import ResponsiveDrawer from '../components/ResponsiveDrawer/ResponsiveDrawer';
+import ClientsTable from '../components/ClientsTable/ClientsTable';
+import { clients } from '../utils/date/clients';
 
 const drawerNames = [{ name: 'Clients', Icon: PeopleIcon }];
 
 export default function Clients() {
+  const [filteredClients, setFilteredClients] = useState(clients);
+  const [searchValue, setSearchValue] = useState('');
+  const [clientID, setClientID] = useState();
+
+  const deleteClient = () => {
+    const clients = filteredClients.filter(({ id }) => id !== clientID);
+    setFilteredClients(clients);
+  };
+
+  const handleSearch = (e) => {
+    const { value } = e.target;
+    setSearchValue(value);
+    const filteredClients = clients.filter(({ storeName }) =>
+      storeName.toLowerCase().includes(value.toLowerCase())
+    );
+    setFilteredClients(filteredClients);
+  };
   return (
     <>
       <Navbar pageName="Clients" />
@@ -18,7 +38,7 @@ export default function Clients() {
         <Grid container direction="column" spacing={2}>
           {/* Heading Content */}
           <Grid item>
-            <Heading>
+            <Heading searchValue={searchValue} handleSearch={handleSearch}>
               <Button
                 disableElevation
                 color="secondary"
@@ -32,7 +52,13 @@ export default function Clients() {
           </Grid>
 
           {/* Table Content */}
-          <Grid item>Table</Grid>
+          <Grid item>
+            <ClientsTable
+              clients={filteredClients}
+              setClientID={setClientID}
+              deleteClient={deleteClient}
+            />
+          </Grid>
         </Grid>
       </ResponsiveDrawer>
     </>

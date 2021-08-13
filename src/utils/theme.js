@@ -1,4 +1,5 @@
 import { createTheme } from '@material-ui/core/styles';
+import grey from '@material-ui/core/colors/grey';
 
 const theme = createTheme({
   palette: {
@@ -31,6 +32,16 @@ const theme = createTheme({
     MuiListItemIcon: {
       root: {
         color: 'inherit',
+      },
+    },
+    MuiTableHead: {
+      root: {
+        backgroundColor: grey[200],
+      },
+    },
+    MuiTableCell: {
+      head: {
+        borderBottomWidth: '0px',
       },
     },
   },
