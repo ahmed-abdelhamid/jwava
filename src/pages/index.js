@@ -31,7 +31,8 @@ export default function Clients() {
   };
 
   const deleteClient = () => {
-    const clients = filteredClients.filter(({ id }) => id !== clientID);
+    const clients = allClients.filter(({ id }) => id !== clientID);
+    setAllClients(clients);
     setFilteredClients(clients);
   };
 
