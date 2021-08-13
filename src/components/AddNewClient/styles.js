@@ -17,6 +17,8 @@ const useStyles = makeStyles(({ palette }) => ({
     backgroundColor: 'transparent',
   },
   actionsContainer: {
+    flexDirection: 'column',
+    alignItems: 'center',
     justifyContent: 'center',
   },
 }));

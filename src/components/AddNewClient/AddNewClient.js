@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import {
   Dialog,
   DialogActions,
@@ -17,11 +17,17 @@ import {
 import useStyles from './styles';
 
 const AddNewClient = ({ open, close, addClient }) => {
+  const [error, setError] = useState('');
   const classes = useStyles();
   const storeNameInput = useRef();
   const businessTypeInput = useRef();
 
   const addNewClient = () => {
+    if (!storeNameInput.current.value || !businessTypeInput.current.value) {
+      setError('Please enter store name and select business type');
+      return;
+    }
+    setError('');
     const clientData = {
       storeName: storeNameInput.current.value,
       businessType: businessTypeInput.current.value,
@@ -419,6 +425,7 @@ const AddNewClient = ({ open, close, addClient }) => {
         </Grid>
       </DialogContent>
       <DialogActions className={classes.actionsContainer}>
+        {error && <Typography color="error">{error}</Typography>}
         <Button
           onClick={addNewClient}
           disableElevation
